@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pour toi Yasmine 🌹💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #ffd6e7 0%, #ff8fab 48%, #fb6f92 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #4a0e2e;
+      text-align: center;
+      padding: 22px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      padding: 32px 22px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 20px 45px rgba(161, 24, 77, 0.22);
+      animation: popIn 0.65s ease-out;
+    }
+
+    .roses-top {
+      font-size: 2rem;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+    }
+
+    .big-heart {
+      font-size: 3.3rem;
+      display: inline-block;
+      animation: heartbeat 1.4s infinite;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      line-height: 1.25;
+      color: #880e4f;
+      margin-bottom: 10px;
+    }
+
+    .counter {
+      display: inline-block;
+      background: rgba(251, 111, 146, 0.18);
+      color: #9d174d;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .message-box {
+      background: #fff5f8;
+      border: 1px solid #ffc2d4;
+      border-radius: 20px;
+      padding: 20px 16px;
+      min-height: 135px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: all 0.25s ease;
+    }
+
+    .msg-emoji {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .msg-text {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #4a0e2e;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-next {
+      background: linear-gradient(135deg, #ff4d8d 0%, #e11d64 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(225, 29, 100, 0.3);
+      transition: transform 0.18s ease;
+    }
+
+    .btn-next:active {
+      transform: scale(0.96);
+    }
+
+    .btn-restart {
+      background: transparent;
+      color: #9d174d;
+      border: 1px solid #f48fb1;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .signature-box {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px dashed #f48fb1;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #880e4f;
+    }
+
+    .roses-bottom {
+      margin-top: 8px;
+      font-size: 1.35rem;
+      letter-spacing: 4px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.16); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="roses-top">🌹 🌸 🌹</div>
+    <div class="big-heart">🩷</div>
+    <h1>Je t'aime ma vie, Yasmine ✨</h1>
+    <div class="counter" id="counter">Message 1 / 4</div>
+
+    <div class="message-box">
+      <div class="msg-emoji" id="msgEmoji">🌹</div>
+      <p class="msg-text" id="msgText">
+        Yasmine, tu es comme une belle rose qui met de la couleur et de la douceur dans chacun de mes jours. 💕
+      </p>
+    </div>
+
+    <div class="controls">
+      <button class="btn-next" id="nextBtn" onclick="nextMessage()">Message suivant 💌</button>
+      <button class="btn-restart" onclick="restartMessages()">Relire depuis le début 🔄</button>
+    </div>
+
+    <div class="signature-box">
+      De la part de ton amour Prince ❤️🥰
+      <div class="roses-bottom">🌷 💘 🌷</div>
+    </div>
+  </div>
+
+  <script>
+    const messages = [
+      {
+        emoji: "🌹",
+        text: "Yasmine, tu es comme une belle rose qui met de la couleur et de la douceur dans chacun de mes jours. 💕"
+      },
+      {
+        emoji: "🥰",
+        text: "Ton sourire, ta voix et ta présence ont le don d'apaiser mon cœur même quand tout autour est compliqué. ✨"
+      },
+      {
+        emoji: "🫶",
+        text: "Je te regarde et je me dis que j'ai tellement de chance de t'avoir à mes côtés, aujourd'hui et demain. 💖"
+      },
+      {
+        emoji: "👑",
+        text: "Tu es mon trésor, ma princesse et l'un des plus beaux cadeaux que la vie m'ait offerts. Mon cœur est à toi. ❤️🌹"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function renderMessage() {
+      const current = messages[currentIndex];
+      document.getElementById("msgEmoji").textContent = current.emoji;
+      document.getElementById("msgText").textContent = current.text;
+      document.getElementById("counter").textContent = `Message ${currentIndex + 1} / ${messages.length}`;
+
+      const nextBtn = document.getElementById("nextBtn");
+      if (currentIndex === messages.length - 1) {
+        nextBtn.textContent = "Dernier mot d'amour 💖";
+      } else {
+        nextBtn.textContent = "Message suivant 💌";
+      }
+    }
+
+    function nextMessage() {
+      if (currentIndex < messages.length - 1) {
+        currentIndex++;
+        renderMessage();
+      } else {
+        currentIndex = 0;
+        renderMessage();
+      }
+    }
+
+    function restartMessages() {
+      currentIndex = 0;
+      renderMessage();
+    }
+  </script>
+</body>
+</html>
